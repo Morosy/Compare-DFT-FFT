@@ -17,6 +17,7 @@
 
 
 ## example
+#### DFTとFFTの処理時間を計測・比較
 ``` console
 $ python -u output_random_signal.py
 Done!
@@ -40,7 +41,7 @@ $ python -u csv_checker.py
 2つのCSVファイルは一致しています.
 ```
 
-
+#### DFT->iDFTとFFT->iFFTの処理時間を計測・比較
 ``` console
 $ gcc DFTandiDFT.c -o DFTandiDFT
 $ gcc FFTandiFFT.c -o FFTandiFFT
