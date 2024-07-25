@@ -1,0 +1,53 @@
+#include "header/header.h"
+#include "header/fileio.h"
+#include "header/mathlib.h"
+#include "header/fft.h"
+
+COMPLEX *FFT_Running(COMPLEX *, int);
+double *iFFT_Running(COMPLEX *, int);
+
+
+int main(int argc, char *argv[])
+{
+    int N = read_file_row("input/signal.csv");
+    double *data = read_file_double("input/signal.csv");
+    printf("read file done (N = %d)\n", N);
+
+    COMPLEX *fft = double_To_COMPLEX(data, N);
+    clock_t begin_FFT, end_FFT;
+    begin_FFT = clock();
+    fft = FFT_Running(fft, N);
+    end_FFT = clock();
+    printf("FFT done\n");
+
+    output_complex_noLabel(fft, N, "output/FFT.csv");
+    printf("output FFT done\n");
+
+    clock_t begin_iFFT, end_iFFT;
+    begin_iFFT = clock();
+    double *ifft = iFFT_Running(fft, N);
+    end_iFFT = clock();
+    printf("iFFT done\n");
+
+    output_double(ifft, N, "output/iFFT.csv");
+    printf("output iDFT done\n");
+
+    printf("FFT execution time: %f\n", (double)(end_FFT - begin_FFT) / CLOCKS_PER_SEC);
+    printf("iFFT execution time: %f\n", (double)(end_iFFT - begin_iFFT) / CLOCKS_PER_SEC);
+
+    return 0;
+}
+
+COMPLEX *FFT_Running(COMPLEX *data, int N)
+{
+    FFT(data, N);
+    return data;
+}
+
+double *iFFT_Running(COMPLEX *data, int N)
+{
+    iFFT(data, N);
+    double *idft = sort_iFFT(COMPLEX_To_double(data, N), N);
+    return idft;
+}
+
