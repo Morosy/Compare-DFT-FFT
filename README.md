@@ -35,9 +35,6 @@ read file done (N = 32768)
 DFT done
 output FFT done
 FFT execution time: 0.031000
-```
-
-
 
 $ python -u csv_checker.py
 2つのCSVファイルは一致しています.
