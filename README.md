@@ -60,7 +60,7 @@ read file done (N = 32768)
 FFT done
 output FFT done
 iFFT done
-output iDFT done
+output iFFT done
 FFT execution time: 0.033000
 iFFT execution time: 0.001000
 
