@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     end_DFT = clock();
     printf("DFT done\n");
 
-    output_complex(dft, N, "output/DFT.csv");
+    output_complex_noLabel(dft, N, "output/DFT.csv");
     printf("output DFT done\n");
 
     printf("DFT execution time: %f\n", (double)(end_DFT - begin_DFT) / CLOCKS_PER_SEC);
