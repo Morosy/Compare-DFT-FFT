@@ -32,7 +32,7 @@ DFT execution time: 70.478000
 
 $ ./FFT
 read file done (N = 32768)
-DFT done
+FFT done
 output FFT done
 FFT execution time: 0.031000
 
