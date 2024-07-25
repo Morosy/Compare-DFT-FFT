@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     begin_FFT = clock();
     fft = FFT_Running(fft, N);
     end_FFT = clock();
-    printf("DFT done\n");
+    printf("FFT done\n");
 
     output_complex_noLabel(fft, N, "output/FFT.csv");
     printf("output FFT done\n");
