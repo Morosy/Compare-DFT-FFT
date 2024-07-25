@@ -12,7 +12,7 @@ def write_to_csv(filename, data):
 
 
 if __name__ == "__main__":
-    N = 2048  # 乱数の個数
+    N = 32768  # 乱数の個数 (2^15)
     min = -10.0  # 最小値
     max = 10.0  # 最大値
     filename = "input/signal.csv"  # 出力ファイル名
