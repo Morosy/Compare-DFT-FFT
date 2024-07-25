@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     end_FFT = clock();
     printf("DFT done\n");
 
-    output_complex(fft, N, "output/FFT.csv");
+    output_complex_noLabel(fft, N, "output/FFT.csv");
     printf("output FFT done\n");
 
     printf("FFT execution time: %f\n", (double)(end_FFT - begin_FFT) / CLOCKS_PER_SEC);
