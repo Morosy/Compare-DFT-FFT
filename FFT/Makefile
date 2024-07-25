@@ -2,7 +2,7 @@ CC := gcc
 CFLAGS := -lm
 PYTHON := python
 SCRIPT := output_random_square.py
-START := 10
+START := 4
 END := 25
 
 all: setup run
