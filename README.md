@@ -38,5 +38,34 @@ FFT execution time: 0.031000
 
 $ python -u csv_checker.py
 2つのCSVファイルは一致しています.
+```
 
+
+``` console
+$ gcc DFTandiDFT.c -o DFTandiDFT
+$ gcc FFTandiFFT.c -o FFTandiFFT
+
+$ ./DFTandiDFT
+read file done (N = 32768)
+DFT done
+output DFT done
+iDFT done
+output iDFT done
+DFT execution time: 70.555000
+iDFT execution time: 70.896000
+
+$ ./FFTandiFFT
+read file done (N = 32768)
+FFT done
+output FFT done
+iFFT done
+output iDFT done
+FFT execution time: 0.033000
+iFFT execution time: 0.001000
+
+$ python -u csv_checker2.py
+比較するファイル: output/DFT.csv, output/FFT.csv
+2つのCSVファイルは一致しています.
+比較するファイル: output/iDFT.csv, output/iFFT.csv
+2つのCSVファイルは一致しています.
 ```
