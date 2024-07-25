@@ -1,7 +1,7 @@
-#include "header/header.h"
-#include "header/fileio.h"
-#include "header/mathlib.h"
-#include "header/fft.h"
+#include "../header/header.h"
+#include "../header/fileio.h"
+#include "../header/mathlib.h"
+#include "../header/fft.h"
 
 #include <time.h>
 #include <math.h>
