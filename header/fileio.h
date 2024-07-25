@@ -45,6 +45,14 @@ void output_int(int *, int, char *);
 void output_complex(COMPLEX *, int, char *);
 
 /*
+    @brief COMPLEX型のファイル内容の出力
+    @param 出力する配列
+    @param 配列の要素数
+    @param ファイル名
+*/
+void output_complex_noLabel(COMPLEX *, int, char *);
+
+/*
     @brief double型のファイル内容の出力
     @param 出力する配列1
     @param 出力する配列2
@@ -149,6 +157,16 @@ void output_complex(COMPLEX *output, int size, char *filename)
     FILE *fp;
     fp = fopen(filename, "w");
     fprintf(fp, "real, imaginary\n");
+    for(int i = 0; i < size; i++){
+        fprintf(fp, "%.1lf, %.1lf\n", output[i].real, output[i].imaginary);
+    }
+    fclose(fp);
+}
+
+void output_complex_noLabel(COMPLEX *output, int size, char *filename)
+{
+    FILE *fp;
+    fp = fopen(filename, "w");
     for(int i = 0; i < size; i++){
         fprintf(fp, "%.1lf, %.1lf\n", output[i].real, output[i].imaginary);
     }
