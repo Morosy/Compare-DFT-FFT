@@ -1,6 +1,7 @@
 import csv
 
 def csv_compare(file1, file2):
+    print(f"比較するファイル: {file1}, {file2}")
     with open(file1, 'r') as f1, open(file2, 'r') as f2:
         csv1 = list(csv.reader(f1))
         csv2 = list(csv.reader(f2))
