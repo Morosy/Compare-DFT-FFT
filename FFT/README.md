@@ -31,8 +31,8 @@ gcc FFT_time.c -o FFT_time -lm
 ``` console
 $ make
 mkdir -p input output
-touch output/DFT_time.csv
-for number in $(seq 4 18); do \
+touch output/FFT_time.csv
+for number in $(seq 4 25); do \
         python -u output_random_square.py $number; \
 done
 16 done
@@ -50,15 +50,19 @@ done
 65536 done
 131072 done
 262144 done
+524288 done
+1048576 done
+2097152 done
+4194304 done
+8388608 done
+16777216 done
+33554432 done
+rm -f output/FFT_time.csv; \
+make FFT_time
 
-rm -f output/DFT_time.csv; \
-make DFT_time; \
-for number in $(seq 4 18); do \
-        ./DFT_time input/signal-$number.csv; \
+for number in $(seq 4 25); do \
+        ./FFT_time input/signal-$number.csv; \
 done
-
-gcc DFT_time.c -o DFT_time -lm
-
 input/signal-4.csv done
 input/signal-5.csv done
 input/signal-6.csv done
@@ -74,4 +78,11 @@ input/signal-15.csv done
 input/signal-16.csv done
 input/signal-17.csv done
 input/signal-18.csv done
+input/signal-19.csv done
+input/signal-20.csv done
+input/signal-21.csv done
+input/signal-22.csv done
+input/signal-23.csv done
+input/signal-24.csv done
+input/signal-25.csv done
 ```
