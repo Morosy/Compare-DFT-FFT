@@ -19,7 +19,7 @@ gcc FFT_time.c -o FFT_time -lm
 ```
 `filename`内のデータでFFTが実行される．
 
-`double *FFT_Running(double *, int)`関数の実行時間が`output/FFT_time.csv`に追記される．
+`COMPLEX *FFT_Running(double *, int)`関数の実行時間が`output/FFT_time.csv`に追記される．
 
 
 #### FFT/time.csv
