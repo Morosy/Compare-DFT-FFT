@@ -7,7 +7,7 @@ END := 18
 
 all: setup run
 
-FFT_time: DFT_time.c
+DFT_time: DFT_time.c
 	$(CC) $< -o $@ $(CFLAGS)
 
 setup:
